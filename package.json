@@ -1,0 +1,29 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "🙈 面试那些事儿",
+  "author": "lencx <cxin1314@gmail.com>",
+  "keywords": [
+    "interview"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "posts": "rgd --owner=lencx --repo=interview --mode=json --jsonfmt=true --outdir=content"
+  },
+  "dependencies": {
+    "gatsby": "^4.8.0",
+    "gatsby-source-filesystem": "^4.8.0",
+    "gatsby-transformer-json": "^4.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "esno": "^0.14.1",
+    "rgd": "^1.0.0"
+  }
+}
