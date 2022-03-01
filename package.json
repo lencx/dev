@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "posts": "rgd --owner=lencx --repo=interview --mode=json --jsonfmt=true --outdir=content"
+    "posts": "rgd --owner=lencx --repo=interview --mode=json --jsonfmt=true --jsontype=md --outdir=content"
   },
   "dependencies": {
     "gatsby": "^4.8.0",
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "esno": "^0.14.1",
-    "rgd": "^1.0.0"
+    "rgd": "^1.2.0"
   }
 }

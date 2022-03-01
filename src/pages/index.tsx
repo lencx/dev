@@ -3,19 +3,33 @@ import { graphql } from 'gatsby';
 
 // markup
 const IndexPage = (props) => {
-  // console.log(props.data.allIssuesJson);
-  return <main>Interview</main>;
+  return (
+    <main>
+      {props.data.allDiscussionsJson.nodes.map((item) => {
+        const post = item.node;
+        return (
+          <div key={post.number}>
+            #{post.number} - {post.title}
+          </div>
+        );
+      })}
+    </main>
+  );
 };
 
 export default IndexPage;
 
 export const query = graphql`
   {
-    allIssuesJson {
+    allDiscussionsJson {
       nodes {
-        body
-        category {
-          name
+        node {
+          number
+          title
+          category {
+            name
+            isAnswerable
+          }
         }
       }
     }
