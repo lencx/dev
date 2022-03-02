@@ -1,5 +1,5 @@
-# interview
+# dev
 
-🙈 面试那些事儿
+🙈 开发那些事儿
 
-[开始阅读](https://github.com/lencx/interview/discussions)
+[开始阅读](https://github.com/lencx/dev/discussions)

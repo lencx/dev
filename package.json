@@ -1,11 +1,11 @@
 {
-  "name": "interview",
+  "name": "dev",
   "version": "1.0.0",
   "private": true,
-  "description": "🙈 面试那些事儿",
+  "description": "🙈 开发那些事儿",
   "author": "lencx <cxin1314@gmail.com>",
   "keywords": [
-    "interview"
+    "dev"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "posts": "rgd --owner=lencx --repo=interview --mode=json --jsonfmt=true --jsontype=md --outdir=content"
+    "posts": "rgd --owner=lencx --repo=dev --mode=json --jsonfmt=true --jsontype=md --outdir=content"
   },
   "dependencies": {
     "gatsby": "^4.8.0",

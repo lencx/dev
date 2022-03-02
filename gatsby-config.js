@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://github.com/lencx/interview`,
+    siteUrl: `https://github.com/lencx/dev`,
   },
   plugins: [
     `gatsby-transformer-json`,
