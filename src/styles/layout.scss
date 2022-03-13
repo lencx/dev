@@ -4,22 +4,23 @@
   flex-direction: column;
 
   header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
     height: 56px;
     background-color: #fff;
     background-color: var(--theme-header-background-color);
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 16px;
     align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
     box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.05),
       0 2px 8px hsla(0, 0%, 0%, 0.05);
   }
 
   main {
-    min-height: calc(100vh - 112px);
+    padding-top: 70px;
+    min-height: calc(100vh - 56px);
     background-color: var(--theme-content-background-color);
   }
 
@@ -43,6 +44,7 @@
 .home-page {
   .issues-item {
     margin: 10px 0;
+    text-align: center;
   }
 }
 
