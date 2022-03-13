@@ -1,0 +1,53 @@
+.dev-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  header {
+    height: 56px;
+    background-color: #fff;
+    background-color: var(--theme-header-background-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.05),
+      0 2px 8px hsla(0, 0%, 0%, 0.05);
+  }
+
+  main {
+    min-height: calc(100vh - 112px);
+    background-color: var(--theme-content-background-color);
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 100%;
+    background-color: var(--theme-footer-background-color);
+    font-size: 14px;
+    color: #838c95;
+
+    img {
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+}
+
+.home-page {
+  .issues-item {
+    margin: 10px 0;
+  }
+}
+
+.issues-page {
+  h1 {
+    text-align: center;
+  }
+}

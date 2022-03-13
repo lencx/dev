@@ -8,22 +8,33 @@
     "dev"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "posts": "rgd --owner=lencx --repo=dev --mode=json --jsonfmt=true --jsontype=md --outdir=content"
+    "develop": "gatsby develop",
+    "posts": "rgd --owner=lencx --repo=dev --mode=json --jsonfmt=true --outdir=discussions"
   },
   "dependencies": {
+    "@iconify-icons/carbon": "^1.2.2",
+    "@iconify/react": "^3.1.4",
+    "@mdx-js/mdx": "^2.0.0",
+    "@mdx-js/react": "^2.0.0",
+    "clsx": "^1.1.1",
     "gatsby": "^4.8.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-mdx": "^3.9.0",
+    "gatsby-plugin-sass": "^5.9.0",
     "gatsby-source-filesystem": "^4.8.0",
     "gatsby-transformer-json": "^4.8.0",
+    "github-markdown-css": "^5.1.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^1.5.5",
     "esno": "^0.14.1",
-    "rgd": "^1.2.0"
+    "rgd": "^1.2.1"
   }
 }

@@ -1,23 +1,25 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Layout from '@src/layouts/base';
 
-// markup
-const IndexPage = (props) => {
+export default function IndexPage(props: any) {
   return (
-    <main>
-      {props.data.allDiscussionsJson.nodes.map((item) => {
-        const post = item.node;
-        return (
-          <div key={post.number}>
-            #{post.number} - {post.title}
-          </div>
-        );
-      })}
-    </main>
+    <Layout className="home-page">
+      <div className="markdown-body">
+        {props.data.allDiscussionsJson.nodes.map((item: any) => {
+          const post = item.node;
+          return (
+            <div className="issues-item" key={post.number}>
+              <Link to={`/issues/${post.number}`}>
+                #{post.number} - {post.title}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </Layout>
   );
-};
-
-export default IndexPage;
+}
 
 export const query = graphql`
   {
