@@ -3,17 +3,24 @@
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 
-  --theme-header-background-color: #fafafa;
-  --theme-footer-background-color: #fafafa;
-  --dev-logo: hsl(210, 8%, 15%);
   --icon: #898989;
 }
 
-.dark {
+* {
+  transition: all 300ms ease-out;
+}
+
+body.dark {
   --theme-content-background-color: #0d1117;
   --theme-header-background-color: hsl(210, 8%, 15%);
   --theme-footer-background-color: hsl(210, 8%, 15%);
   --dev-logo: #686868;
+}
+
+body.light {
+  --theme-header-background-color: #fafafa;
+  --theme-footer-background-color: #fafafa;
+  --dev-logo: hsl(210, 8%, 15%);
 }
 
 body {

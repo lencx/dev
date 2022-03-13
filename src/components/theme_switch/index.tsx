@@ -5,11 +5,10 @@ import iconMoon from '@iconify-icons/carbon/moon';
 
 import './index.scss';
 
-const win: any = window;
-
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState('light');
   const [isDark, setDark] = useState(false);
+  const win: any = typeof window !== 'undefined' ? window : {};
 
   useEffect(() => {
     setTheme(win.__theme);
