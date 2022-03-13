@@ -19,6 +19,7 @@ jobs:
       - run: yarn
       - run: yarn posts --token=${{ secrets.GH_TOKEN }}
       - run: yarn build
+      - run: cp CNAME ./public
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

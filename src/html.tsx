@@ -15,16 +15,20 @@ export default function HTML(props: HTMLProps) {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         {props.headComponents}
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.addEventListener('load', function() {
+            __html: `
+(function() {
   window.__onThemeChange = function() {};
   function setTheme(newTheme) {
     window.__theme = newTheme;
     preferredTheme = newTheme;
-    document.body.className = newTheme;
+    document.querySelector('html').className = newTheme;
     window.__onThemeChange(newTheme);
   }
   var preferredTheme;
@@ -41,14 +45,19 @@ export default function HTML(props: HTMLProps) {
   darkQuery.addListener(function(e) {
     window.__setPreferredTheme(e.matches ? 'dark' : 'light')
   });
+
   setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-});`,
+})()`,
           }}
         />
       </head>
-      <body {...props.bodyAttributes} className="light">
+      <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
         {props.postBodyComponents}
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 🙈 开发那些事儿
 
-[开始阅读](https://lencx.github.io/dev/)
+[开始阅读](https://dev.lencx.tech)
 
 ## License
 

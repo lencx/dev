@@ -6,27 +6,31 @@ import iconMoon from '@iconify-icons/carbon/moon';
 import './index.scss';
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('');
   const [isDark, setDark] = useState(false);
   const win: any = typeof window !== 'undefined' ? window : {};
-
-  useEffect(() => {
-    setTheme(win.__theme);
-  }, [win.__theme]);
+  const _isDark = (theme || win.__theme) === 'dark';
 
   const handleChange = () => {
-    const isDark = theme === 'dark';
     const _theme = isDark ? 'light' : 'dark';
-    setDark(isDark);
+    setDark(_isDark);
     setTheme(_theme);
     win.__setPreferredTheme(_theme);
   };
+
+  useEffect(() => {
+    setTheme(win.__theme);
+    setDark(_isDark);
+    win.__onThemeChange = () => {
+      setTheme(win.__theme);
+    };
+  }, [win.__theme]);
 
   return (
     <Icon
       className="dev-theme-toggle"
       onClick={handleChange}
-      icon={isDark ? iconSun : iconMoon}
+      icon={isDark ? iconMoon : iconSun}
       fontSize="20"
       color="var(--icon)"
     />
