@@ -3,6 +3,7 @@ module.exports = {
     title: `DEV`,
     description: `🙈 开发那些事儿`,
     repo: `https://github.com/lencx/dev`,
+    rss: '/feed.xml',
   },
   plugins: [
     `gatsby-plugin-sass`,

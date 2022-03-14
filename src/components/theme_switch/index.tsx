@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react/dist/offline';
-import iconSun from '@iconify-icons/carbon/sun';
-import iconMoon from '@iconify-icons/carbon/moon';
+import iconSun from '@iconify-icons/mdi/wb-sunny';
+import iconMoon from '@iconify-icons/mdi/moon-and-stars';
 
 import './index.scss';
 

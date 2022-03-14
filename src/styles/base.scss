@@ -3,7 +3,7 @@
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 
-  --icon: #898989;
+  --icon: #867898;
 }
 
 * {
@@ -15,7 +15,7 @@ html.dark {
   --theme-content-background-color: #0d1117;
   --theme-header-background-color: hsl(210, 8%, 15%);
   --theme-footer-background-color: hsl(210, 8%, 15%);
-  --dev-logo: #686868;
+  --dev-logo: #d8d8d8;
 }
 
 html.light {
@@ -32,4 +32,5 @@ body {
 
 .icon-action {
   cursor: pointer;
+  user-select: none;
 }

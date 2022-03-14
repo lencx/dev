@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
 import { Icon } from '@iconify/react/dist/offline';
 import iconGh from '@iconify-icons/carbon/logo-github';
+import iconRss from '@iconify-icons/mdi/rss';
 
 import Logo from '@comps/logo';
 import ThemeSwitch from '@comps/theme_switch';
@@ -18,6 +19,7 @@ export default function Layout(props: LayoutProps) {
     {
       site {
         siteMetadata {
+          rss
           repo
           title
           description
@@ -30,8 +32,8 @@ export default function Layout(props: LayoutProps) {
     navigate('/');
   };
 
-  const handleGoRepo = () => {
-    window.open(data.site.siteMetadata.repo, '_blank');
+  const handleGo = (uri: string) => {
+    window.open(uri, '_blank');
   };
 
   return (
@@ -42,10 +44,17 @@ export default function Layout(props: LayoutProps) {
           <ThemeSwitch />{' '}
           <Icon
             className="icon-action"
+            icon={iconRss}
+            fontSize="20"
+            color="var(--icon)"
+            onClick={() => handleGo(data.site.siteMetadata.rss)}
+          />
+          <Icon
+            className="icon-action"
             icon={iconGh}
             fontSize="20"
             color="var(--icon)"
-            onClick={handleGoRepo}
+            onClick={() => handleGo(data.site.siteMetadata.repo)}
           />
         </div>
       </header>
