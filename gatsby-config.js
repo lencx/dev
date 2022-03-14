@@ -31,5 +31,25 @@ module.exports = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `DEV`,
+        short_name: `DEV`,
+        start_url: `/`,
+        background_color: `#fafafa`,
+        theme_color: `#0d1117`,
+        display: `standalone`,
+        icon: `./src/static/logo.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          importWorkboxFrom: `cdn`,
+        },
+      },
+    },
   ],
 };
