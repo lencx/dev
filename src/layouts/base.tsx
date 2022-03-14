@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
 import { Icon } from '@iconify/react/dist/offline';
-import iconGh from '@iconify-icons/carbon/logo-github';
+import iconGh from '@iconify-icons/mdi/github';
 import iconRss from '@iconify-icons/mdi/rss';
 
 import Logo from '@comps/logo';

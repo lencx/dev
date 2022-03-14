@@ -17,7 +17,6 @@
     "posts": "rgd --owner=lencx --repo=dev --mode=json,rss --jsonfmt=true --outdir=discussions"
   },
   "dependencies": {
-    "@iconify-icons/carbon": "^1.2.2",
     "@iconify-icons/mdi": "^1.2.1",
     "@iconify/react": "^3.1.4",
     "@mdx-js/mdx": "^2.0.0",
