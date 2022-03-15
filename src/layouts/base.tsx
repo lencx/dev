@@ -5,9 +5,9 @@ import { Icon } from '@iconify/react/dist/offline';
 import iconGh from '@iconify-icons/mdi/github';
 import iconRss from '@iconify-icons/mdi/rss';
 
-import { go } from '@utils/tools';
 import Logo from '@comps/logo';
 import ThemeSwitch from '@comps/theme_switch';
+import { go } from '@utils/tools';
 import '@styles/layout.scss';
 
 interface LayoutProps {

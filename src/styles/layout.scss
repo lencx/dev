@@ -6,6 +6,7 @@
   header {
     position: fixed;
     top: 0px;
+    z-index: 999;
     width: 100%;
     height: 56px;
     background-color: #fff;
@@ -19,7 +20,7 @@
   }
 
   main {
-    padding-top: 90px;
+    padding-top: 80px;
     min-height: calc(100vh - 56px);
     background-color: var(--theme-content-background-color);
   }

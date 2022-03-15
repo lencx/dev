@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '@layouts/base';
-import getEmoji from '@utils/emoji';
 import IssuesList from '@comps/issues_list';
+import getEmoji from '@utils/emoji';
 import { go } from '@utils/tools';
 import '@styles/category.scss';
 
