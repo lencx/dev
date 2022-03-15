@@ -1,0 +1,22 @@
+.category-page {
+  text-align: center;
+
+  .markdown-body {
+    display: inline-block;
+  }
+
+  .category-head {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .desc {
+      opacity: 0.4;
+    }
+  }
+}

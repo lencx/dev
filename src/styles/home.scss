@@ -1,0 +1,50 @@
+.home-page {
+  .issues-list {
+    max-width: unset;
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .item {
+      width: calc(50% - 20px);
+      margin: 0 10px 20px;
+      min-width: 200px;
+      max-width: 100%;
+      background-color: rgba(180, 180, 180, 0.1);
+
+      .info {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(150, 150, 150, 0.2);
+
+        .category {
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .empty {
+          width: 50px;
+        }
+      }
+
+      .title {
+        display: inline-block;
+        padding: 10px 16px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      .item {
+        width: 100%;
+      }
+    }
+  }
+}

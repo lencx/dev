@@ -19,7 +19,7 @@
   }
 
   main {
-    padding-top: 70px;
+    padding-top: 90px;
     min-height: calc(100vh - 56px);
     background-color: var(--theme-content-background-color);
   }
@@ -38,13 +38,6 @@
       vertical-align: middle;
       margin-right: 10px;
     }
-  }
-}
-
-.home-page {
-  .issues-item {
-    margin: 10px 0;
-    text-align: center;
   }
 }
 

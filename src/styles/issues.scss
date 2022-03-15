@@ -1,0 +1,23 @@
+.issues-page {
+  .labels {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .label {
+      font-size: 12px;
+      border-radius: 2px;
+      border-style: solid;
+      border-width: 3px;
+      cursor: pointer;
+
+      b {
+        padding: 0 3px 0 2px;
+        color: #fff;
+      }
+
+      em {
+        padding: 0 3px;
+      }
+    }
+  }
+}

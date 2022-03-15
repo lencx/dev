@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react/dist/offline';
 import iconGh from '@iconify-icons/mdi/github';
 import iconRss from '@iconify-icons/mdi/rss';
 
+import { go } from '@utils/tools';
 import Logo from '@comps/logo';
 import ThemeSwitch from '@comps/theme_switch';
 import '@styles/layout.scss';
@@ -28,18 +29,10 @@ export default function Layout(props: LayoutProps) {
     }
   `);
 
-  const handleGoHome = () => {
-    navigate('/');
-  };
-
-  const handleGo = (uri: string) => {
-    window.open(uri, '_blank');
-  };
-
   return (
     <div className={clsx('dev-container', props.className)}>
       <header>
-        <Logo onClick={handleGoHome} color="var(--dev-logo)" />
+        <Logo onClick={() => navigate('/')} color="var(--dev-logo)" />
         <div>
           <ThemeSwitch />{' '}
           <Icon
@@ -47,14 +40,14 @@ export default function Layout(props: LayoutProps) {
             icon={iconRss}
             fontSize="20"
             color="var(--icon)"
-            onClick={() => handleGo(data.site.siteMetadata.rss)}
+            onClick={() => go(data.site.siteMetadata.rss)}
           />
           <Icon
             className="icon-action"
             icon={iconGh}
             fontSize="20"
             color="var(--icon)"
-            onClick={() => handleGo(data.site.siteMetadata.repo)}
+            onClick={() => go(data.site.siteMetadata.repo)}
           />
         </div>
       </header>

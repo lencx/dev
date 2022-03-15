@@ -1,9 +1,3 @@
-.markdown-body {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .dark .markdown-body {
   color-scheme: dark;
   --color-prettylights-syntax-comment: #8b949e;
@@ -94,4 +88,14 @@
   --color-accent-emphasis: #0969da;
   --color-attention-subtle: #fff8c5;
   --color-danger-fg: #cf222e;
+}
+
+.markdown-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+h1 {
+  border-bottom: none !important;
 }
