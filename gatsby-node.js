@@ -1,3 +1,5 @@
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
@@ -77,4 +79,16 @@ exports.createPages = async function ({ actions, graphql }) {
       context: { labels: value, name: key, nlen },
     });
   }
+};
+
+// Fix warn chunk commons [mini-css-extract-plugin] error in Gatsby JS
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new FilterWarningsPlugin({
+        exclude:
+          /mini-css-extract-plugin[^]*Conflicting order. Following module has been added:/,
+      }),
+    ],
+  });
 };
