@@ -34,7 +34,7 @@ export default function Layout(props: LayoutProps) {
       <header>
         <Logo onClick={() => navigate('/')} color="var(--dev-logo)" />
         <div>
-          <ThemeSwitch />{' '}
+          <ThemeSwitch />
           <Icon
             className="icon-action"
             icon={iconRss}

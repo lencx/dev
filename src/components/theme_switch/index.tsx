@@ -21,9 +21,6 @@ const ThemeSwitch = () => {
   useEffect(() => {
     setTheme(win.__theme);
     setDark(_isDark);
-    win.__onThemeChange = () => {
-      setTheme(win.__theme);
-    };
   }, [win.__theme]);
 
   return (

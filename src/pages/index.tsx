@@ -1,48 +1,35 @@
 import React from 'react';
-import { graphql, Link, navigate } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '@layouts/base';
-import getEmoji from '@utils/emoji';
-import { go } from '@utils/tools';
+import Author from '@comps/author';
+import Category from '@comps/category';
+import IssuesNum from '@comps/issues_num';
 import '@styles/home.scss';
 
 export default function IndexPage(props: any) {
   const repo = props.data.site.siteMetadata.repo;
 
-  const handleCategory = (name: string) => {
-    navigate(`/category/${name}`);
-  };
-
   return (
     <Layout className="home-page">
       <div className="markdown-body issues-list">
         <div>
-          {props.data.allDiscussionsJson.nodes.map((item: any) => {
-            const post = item.node;
-            const category = post.category;
-            const issuesLink = `${repo}/discussions/${post.number}`;
+          {props.data.allDiscussionsJson.nodes.map(({ node }: any) => {
+            const category = node.category;
 
             return (
-              <div className="item" key={post.number}>
-                <div className="info">
-                  <span
-                    className="category"
-                    onClick={() => handleCategory(category.name)}
-                  >
-                    {getEmoji(category.emoji)} {category.name}
-                  </span>
-                  <span className="empty" />
-                  <span
-                    className="number issues-num"
-                    title={issuesLink}
-                    onClick={() => go(issuesLink)}
-                  >
-                    #{post.number}
-                  </span>
+              <div className="item" key={node.number}>
+                <Author
+                  author={node.author}
+                  date={node.updatedAt}
+                  extra={<IssuesNum repo={repo} number={node.number} />}
+                />
+                <div className="post-info">
+                  <Category category={category} />
+                  <Link className="title" to={`/issues/${node.number}`}>
+                    {node.title}
+                  </Link>
                 </div>
-                <Link className="title" to={`/issues/${post.number}`}>
-                  {post.title}
-                </Link>
               </div>
             );
           })}
@@ -64,6 +51,12 @@ export const query = graphql`
         node {
           number
           title
+          updatedAt
+          author {
+            avatarUrl
+            login
+            url
+          }
           category {
             name
             isAnswerable

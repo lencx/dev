@@ -3,8 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '@layouts/base';
 import IssuesList from '@comps/issues_list';
-import getEmoji from '@utils/emoji';
-import { go } from '@utils/tools';
+import Category from '@comps/category';
 import '@styles/category.scss';
 
 export default function BlogCategory(props: any) {
@@ -18,9 +17,7 @@ export default function BlogCategory(props: any) {
     <Layout className="category-page">
       <div className="markdown-body">
         <div className="category-head" title={categoriesLink}>
-          <span className="name" onClick={() => go(categoriesLink)}>
-            {getEmoji(categoryInfo.emoji)} {categoryInfo.name}
-          </span>
+          <Category category={categoryInfo} />
           <span className="desc">{categoryInfo.description}</span>
         </div>
 

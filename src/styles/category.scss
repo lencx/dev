@@ -9,14 +9,17 @@
     margin-bottom: 20px;
     cursor: pointer;
 
-    .name {
-      font-size: 20px;
+    .category {
+      font-size: 16px;
+      height: 28px;
+      line-height: 28px;
       font-weight: bold;
-      margin-right: 10px;
+      padding: 0 8px;
     }
 
     .desc {
       opacity: 0.4;
+      vertical-align: middle;
     }
   }
 }

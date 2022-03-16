@@ -7,6 +7,8 @@
   --font-base: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
+  --border: rgba(180, 180, 180, 0.1);
 }
 
 * {
@@ -33,14 +35,6 @@ body {
   font-family: var(--font-base);
   margin: 0;
   padding: 0;
-}
-
-.issues-num {
-  font-style: italic;
-  font-family: 'lab';
-  font-variation-settings: 'size' 30, 'quad' 40, 'bevl' 20, 'oval' 30;
-  opacity: 0.6;
-  cursor: pointer;
 }
 
 .icon-action {

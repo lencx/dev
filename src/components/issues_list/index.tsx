@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
+import IssuesNum from '@comps/issues_num';
 import { go, fmtIssues } from '@utils/tools';
 
 import './index.scss';
@@ -18,17 +19,9 @@ const IssuesList: FC<IssuesListProps> = (props) => {
   return (
     <div className="issues-list">
       {data.map(({ node }: any) => {
-        const issuesLink = `${repo}/discussions/${node.number}`;
-
         return (
           <div key={node.number} className="issues-item">
-            <span
-              className="num issues-num"
-              title={issuesLink}
-              onClick={() => go(issuesLink)}
-            >
-              {fmtIssues(node.number, nlen)}
-            </span>
+            <IssuesNum repo={repo} number={node.number} len={nlen} />
             <Link className="title" to={`/issues/${node.number}`}>
               {node.title}
             </Link>
