@@ -14,7 +14,11 @@ const Author: FC<AuthorProps> = (props) => {
   const author = props.author;
   return (
     <div className="author-info">
-      <span className="author" onClick={() => go(author.url)}>
+      <span
+        className="author"
+        title={author.url}
+        onClick={() => go(author.url)}
+      >
         <img src={author.avatarUrl} alt={author.login} />
         <span>{author.login}</span>
       </span>

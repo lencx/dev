@@ -38,6 +38,7 @@ export default function BlogIssues(props: any) {
           {labels.map(({ node }: any) => {
             return (
               <Link
+                key={node.name}
                 className="label"
                 style={{ borderColor: `#${node.color}` }}
                 to={`/labels/${node.name}`}
