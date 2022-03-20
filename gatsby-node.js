@@ -4,22 +4,36 @@ exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
       allDiscussionsJson {
-        nodes {
-          node {
-            number
-            title
-            category {
-              name
-              emoji
-              description
-              isAnswerable
+        edges {
+          previous {
+            node {
+              title
+              number
             }
-            labels {
-              edges {
-                node {
-                  color
-                  name
-                  id
+          }
+          next {
+            node {
+              title
+              number
+            }
+          }
+          node {
+            node {
+              title
+              number
+              category {
+                name
+                emoji
+                description
+                isAnswerable
+              }
+              labels {
+                edges {
+                  node {
+                    color
+                    name
+                    id
+                  }
                 }
               }
             }
@@ -33,8 +47,9 @@ exports.createPages = async function ({ actions, graphql }) {
   let labelsMap = new Map();
   let nlen = 0;
 
-  data.allDiscussionsJson.nodes.forEach(({ node }) => {
-    const number = node.number;
+  data.allDiscussionsJson.edges.forEach(({ previous, next, node }) => {
+    const curr = node.node;
+    const number = curr.number;
 
     // number length
     const _nlen = `${number}`.length;
@@ -44,20 +59,20 @@ exports.createPages = async function ({ actions, graphql }) {
     actions.createPage({
       path: `issues/${number}`,
       component: require.resolve(`./src/templates/issues.tsx`),
-      context: { number },
+      context: { number, previous: previous?.node, next: next?.node },
     });
 
     // category
-    const category = node.category;
+    const category = curr.category;
     if (!categoryMap.get(category.name)) {
       categoryMap.set(category.name, category);
     }
 
     // labels
-    const labels = node.labels.edges;
-    labels.forEach(({ node }) => {
-      if (!labelsMap.get(node.name)) {
-        labelsMap.set(node.name, node);
+    const labels = curr.labels.edges;
+    labels.forEach((label) => {
+      if (!labelsMap.get(label.node.name)) {
+        labelsMap.set(label.node.name, label.node);
       }
     });
   });

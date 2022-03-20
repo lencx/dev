@@ -9,6 +9,7 @@ import Layout from '@layouts/base';
 import Author from '@comps/author';
 import IssuesNum from '@comps/issues_num';
 import Category from '@comps/category';
+import PrevNext from '@comps/prev_next';
 import '@styles/issues.scss';
 
 export default function BlogIssues(props: any) {
@@ -21,6 +22,7 @@ export default function BlogIssues(props: any) {
   const author = data.author;
 
   const repo = props.data.site.siteMetadata.repo;
+  const pageCxt = props.pageContext;
 
   return (
     <Layout className="issues-page">
@@ -60,9 +62,13 @@ export default function BlogIssues(props: any) {
                 </span>
               </div>
             )}
-            <div dangerouslySetInnerHTML={{ __html: data.bodyHTML }} />
+            <div
+              className="quescontent"
+              dangerouslySetInnerHTML={{ __html: data.bodyHTML }}
+            />
           </div>
         </div>
+        <PrevNext previous={pageCxt.previous} next={pageCxt.next} />
         <div className="answer-content">
           {hasComments && isa && (
             <div
