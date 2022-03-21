@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import NavIcon from './NavIcon';
@@ -23,6 +23,12 @@ const Nav: FC<NavProps> = ({ siteMetadata }) => {
       enableBodyScroll(body);
     }
   };
+
+  useEffect(() => {
+    if (!isToggle) {
+      enableBodyScroll(document.querySelector('body') as any);
+    }
+  }, []);
 
   return (
     <div className="dev-nav">
