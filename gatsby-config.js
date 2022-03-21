@@ -39,7 +39,7 @@ module.exports = {
         short_name: `DEV`,
         start_url: `/`,
         background_color: `#fafafa`,
-        theme_color: `#0d1117`,
+        theme_color: `#232629`,
         display: `standalone`,
         icon: `./src/static/logo.png`,
       },

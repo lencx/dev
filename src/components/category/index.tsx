@@ -6,13 +6,13 @@ import getEmoji from '@utils/emoji';
 import './index.scss';
 
 interface CategoryProps {
-  category: any;
+  data: any;
 }
 
-const Category: FC<CategoryProps> = ({ category }) => {
+const Category: FC<CategoryProps> = ({ data }) => {
   return (
-    <Link className="category" to={`/category/${category.name}`}>
-      {getEmoji(category.emoji)} {category.name}
+    <Link className="category" to={`/category/${data.name}`}>
+      {getEmoji(data.emoji)} {data.name}
     </Link>
   );
 };

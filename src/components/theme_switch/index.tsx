@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
 
   return (
     <Icon
-      className="dev-theme-toggle"
+      className="dev-theme-toggle icon-action"
       onClick={handleChange}
       icon={isDark ? iconMoon : iconSun}
       fontSize="20"

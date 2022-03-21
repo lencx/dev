@@ -9,6 +9,7 @@ import Layout from '@layouts/base';
 import Author from '@comps/author';
 import IssuesNum from '@comps/issues_num';
 import Category from '@comps/category';
+import Label from '@comps/label';
 import PrevNext from '@comps/prev_next';
 import '@styles/issues.scss';
 
@@ -34,19 +35,9 @@ export default function BlogIssues(props: any) {
           </span>
         </h1>
         <div className="labels">
-          <Category category={data.category} />
+          <Category data={data.category} />
           {labels.map(({ node }: any) => {
-            return (
-              <Link
-                key={node.name}
-                className="label"
-                style={{ borderColor: `#${node.color}` }}
-                to={`/labels/${node.name}`}
-              >
-                <b style={{ background: `#${node.color}` }}>#</b>
-                <em>{node.name}</em>
-              </Link>
-            );
+            return <Label key={node.name} data={node} />;
           })}
         </div>
         <div>

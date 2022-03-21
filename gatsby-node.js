@@ -94,6 +94,20 @@ exports.createPages = async function ({ actions, graphql }) {
       context: { labels: value, name: key, nlen },
     });
   }
+
+  // categories page
+  actions.createPage({
+    path: `category`,
+    component: require.resolve(`./src/templates/nav-category.tsx`),
+    context: { categoryList: Array.from(categoryMap.values()) },
+  });
+
+  // labels page
+  actions.createPage({
+    path: `labels`,
+    component: require.resolve(`./src/templates/nav-labels.tsx`),
+    context: { labelsList: Array.from(labelsMap.values()) },
+  });
 };
 
 // Fix warn chunk commons [mini-css-extract-plugin] error in Gatsby JS

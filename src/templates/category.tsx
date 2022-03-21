@@ -17,7 +17,7 @@ export default function BlogCategory(props: any) {
     <Layout className="category-page">
       <div className="markdown-body">
         <div className="category-head" title={categoriesLink}>
-          <Category category={categoryInfo} />
+          <Category data={categoryInfo} />
           <span className="desc">{categoryInfo.description}</span>
         </div>
 
