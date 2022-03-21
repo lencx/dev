@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '@layouts/base';
 import IssuesList from '@comps/issues_list';
@@ -14,14 +14,14 @@ export default function BlogCategory(props: any) {
   return (
     <Layout className="labels-page">
       <div className="markdown-body">
-        <div
+        <Link
+          to={labelsLink}
           className="labels-head"
-          title={labelsLink}
           style={{ background: `#${labelsInfo.color}` }}
           onClick={() => go(labelsLink)}
         >
           {labelsInfo.name}
-        </div>
+        </Link>
 
         <IssuesList data={props.data} pageContext={props.pageContext} />
       </div>
