@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { graphql, Link } from 'gatsby';
+import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
 import { Icon } from '@iconify/react/dist/offline';
 import iconAnswer from '@iconify-icons/mdi/question-answer';
 import iconQues from '@iconify-icons/mdi/comment-question';
@@ -25,8 +25,12 @@ export default function BlogIssues(props: any) {
   const repo = props.data.site.siteMetadata.repo;
   const pageCxt = props.pageContext;
 
+  useEffect(() => {
+    setHide(data.category.isAnswerable);
+  }, []);
+
   return (
-    <Layout className="issues-page">
+    <Layout className="issues-page" title={`${data.title} | Issues`}>
       <div className="markdown-body">
         <h1>
           <span>
@@ -34,7 +38,7 @@ export default function BlogIssues(props: any) {
             <span>{data.title}</span>
           </span>
         </h1>
-        <div className="labels">
+        <div className="widget">
           <Category data={data.category} />
           {labels.map(({ node }: any) => {
             return <Label key={node.name} data={node} />;
@@ -76,8 +80,6 @@ export default function BlogIssues(props: any) {
               !isHide &&
               comments.map(({ node }: any) => {
                 const _replies = node.replies.edges;
-                console.log('«67» /src/templates/issues.tsx ~> ', _replies);
-
                 return (
                   <div className="comments-item" key={node.id}>
                     <Author author={node.author} />

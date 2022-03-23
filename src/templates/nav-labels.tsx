@@ -10,11 +10,11 @@ export default function BlogNavCategory(props: any) {
   const list = props.pageContext.labelsList;
 
   return (
-    <Layout className="nav-labels-page">
+    <Layout className="nav-labels-page" title="Labels">
       <div className="markdown-body">
         <div className="page-title">
           <Icon className="icon" icon={iconTags} fontSize="24" />
-          标签
+          Labels
         </div>
         <div className="list text-center">
           {list.map((item: any, idx: number) => {

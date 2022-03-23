@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `DEV`,
     description: `🙈 开发那些事儿`,
+    owner: 'lencx',
     repo: `https://github.com/lencx/dev`,
     rss: '/feed.xml',
   },
